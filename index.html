@@ -24,7 +24,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Think Bold</title>
+	<title>Think Bold Design</title>
 
 </head>
 
@@ -393,31 +393,7 @@
 					<div class="clear"></div>
 
 				</div>
-<!-- 
-				<div class="section parallax dark nobottommargin" style="background-image: url('images/services/home-testi-bg.jpg'); padding: 100px 0;" data-stellar-background-ratio="0.4">
-
-					<div class="heading-block center">
-						<h3>What Clients Say?</h3>
-					</div>
-
-					<div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
-						<div class="flexslider">
-							<div class="slider-wrap">
-								<div class="slide">
-									<div class="testi-content">
-										<p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
-										<div class="testi-meta">
-											Steve Jobs
-											<span>Apple Inc.</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
- -->
+				
 
 				<div id="section-contact" class="page-section notoppadding">
 
@@ -505,7 +481,7 @@
 
 						<div class="clear"></div>
 
-						<i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span>
+						<i class="icon-envelope2"></i> info@thinkBoldDesign.com
 					</div>
 
 				</div>
@@ -517,24 +493,28 @@
 	</div><!-- #wrapper end -->
 
 	<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-
-	<!-- Modal content-->
-	<div class="modal-content">
-	  <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal">&times;</button>
-	    <h4 class="modal-title">Modal Header</h4>
-	  </div>
-	  <div class="modal-body">
-	    <p>Some text in the modal.</p>
-	  </div>
-	  <div class="modal-footer">
-	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Success!</h4>
+	        <p>You have successfully submitted your email request, we will get back to you shortly!</p>
+	      </div>
+	    </div>
 	  </div>
 	</div>
 
-	</div>
+	<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Success!</h4>
+	        <p>You have successfully purchased, you will get a follow up email shortly.</p>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
 	<!-- Go To Top
@@ -555,11 +535,14 @@
 
 	<script type="text/javascript">
 		var params = String(window.location.search)
-		console.log(params)
-		if (params == '?success') {
-			console.log('truue')
-			$('#myModal').modal();
-		}
+
+		$( document ).ready(function() {
+			if (params == '?success') {
+				$('#successModal').modal();
+			} else if (params == '?contact') {
+				$('#contactModal').modal();
+			}
+		});
 		
 		$('#google-map').gMap({
 			address: 'New York City, New York',
