@@ -301,6 +301,7 @@
 		background: #FFF;
 		border-bottom: 1px solid #F5F5F5;
 		z-index: auto;
+		display: none;
 	}
 
 	#header.dark.transparent-header,
